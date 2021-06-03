@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>591</width>
+    <height>408</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <weight>50</weight>
+    <bold>false</bold>
+    <underline>false</underline>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">BigHW</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="17" column="0">
+     <widget class="QLineEdit" name="lineEdit"/>
+    </item>
+    <item row="15" column="2">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="palette">
+       <palette>
+        <active>
+         <colorrole role="LinkVisited">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>35</red>
+            <green>39</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </active>
+        <inactive>
+         <colorrole role="LinkVisited">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>35</red>
+            <green>39</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </inactive>
+        <disabled>
+         <colorrole role="LinkVisited">
+          <brush brushstyle="SolidPattern">
+           <color alpha="255">
+            <red>35</red>
+            <green>39</green>
+            <blue>255</blue>
+           </color>
+          </brush>
+         </colorrole>
+        </disabled>
+       </palette>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+    </item>
+    <item row="15" column="1">
+     <widget class="QSpinBox" name="spinBox_2">
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>999</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="0" colspan="2">
+     <widget class="QTableView" name="tableView"/>
+    </item>
+    <item row="8" column="0" colspan="2">
+     <widget class="QListView" name="listView"/>
+    </item>
+    <item row="10" column="0" colspan="2">
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Panel</enum>
+      </property>
+      <property name="text">
+       <string>Countries</string>
+      </property>
+     </widget>
+    </item>
+    <item row="17" column="1" colspan="2">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QLabel" name="label">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string>Data About Country #</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QSpinBox" name="spinBox">
+      <property name="font">
+       <font>
+        <weight>50</weight>
+        <bold>false</bold>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 230, 253);</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>9999</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>591</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuhelp">
+    <property name="title">
+     <string>menu</string>
+    </property>
+    <addaction name="actionload"/>
+    <addaction name="actionsave_as"/>
+    <addaction name="actionabout"/>
+   </widget>
+   <addaction name="menuhelp"/>
+  </widget>
+  <action name="actionabout">
+   <property name="text">
+    <string>about</string>
+   </property>
+  </action>
+  <action name="actionload">
+   <property name="text">
+    <string>load</string>
+   </property>
+  </action>
+  <action name="actionsave_as">
+   <property name="text">
+    <string>save as</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>spinBox</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>setListViewColumn(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>581</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>750</x>
+     <y>166</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>onDeleteButtonClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>554</x>
+     <y>379</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>830</x>
+     <y>349</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onLoadButtonPushed()</slot>
+  <slot>setListViewColumn(int)</slot>
+  <slot>onDeleteButtonClicked()</slot>
+ </slots>
+</ui>
