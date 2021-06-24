@@ -8,6 +8,7 @@
 #include <QList>
 #include <QFileDialog>
 #include <iostream>
+#include <QSortFilterProxyModel>
 
 void fillModelWithData(MyModel* myModel, QString path)
 {
@@ -16,6 +17,7 @@ void fillModelWithData(MyModel* myModel, QString path)
     QTextStream inputStream(&inputFile);
     QString line = inputStream.readLine();
     myModel->headerList = line.split(",");
+    myModel->headerList.append("total");
     while(!inputStream.atEnd())
     {
         QString line = inputStream.readLine();
@@ -28,6 +30,7 @@ void fillModelWithData(MyModel* myModel, QString path)
         myModel->appendRow(dataRow);
     }
     inputFile.close();
+
 }
 
 void saveModelAsFile(MyModel* m, QString path)
@@ -90,10 +93,13 @@ void MainWindow::setListViewColumn(int value)
 
 void MainWindow::onDeleteButtonClicked()
 {
-    if (ui->spinBox_2->value() > 0)
+    QModelIndexList count = ui->tableView->selectionModel()->selectedRows();
+    std::cout<<count.size();
+    for( int i = count.size()-1; i >=0; i--)
     {
-        myModel->deleteRow(ui->spinBox_2->value() - 1);
+       myModel->deleteRow(count[i].row());
     }
+
     ui->listView->setModelColumn(0);
     ui->spinBox->setValue(1);
 }
@@ -128,14 +134,28 @@ void MainWindow::on_pushButton_clicked()
 }
 
 
-void MainWindow::on_spinBox_2_valueChanged(int arg1)
+
+void MainWindow::on_pushButton_3_clicked()
 {
-    if (ui->spinBox_2->value() > myModel->rowCount())
+    QList<QString> tot;
+    int max = myModel->rowCount();
+    QModelIndex k ;
+    for (int i = 0;i<max;i++)
     {
-        ui->spinBox_2->setValue(1);
-    }
-    if (ui->spinBox_2->value() < 1)
-    {
-        ui->spinBox_2->setValue( myModel->rowCount());
+        tot.append(QString("total of"));
+        tot.append(myModel->itemData(myModel->index(i,0,QModelIndex())).first().toString());
+        int res = 0;
+        for (int j = 1;j<7;j++)
+        {
+             k = myModel->index(i,j,QModelIndex());
+            res += myModel->itemData(k).first().toInt();
+        }
+        tot.append(QString::number(res));
+        tot.append(QString());
+        tot.append(QString());
+        tot.append(QString());
+        tot.append(QString());
+    myModel->appendRow(tot);
+    tot.clear();
     }
 }

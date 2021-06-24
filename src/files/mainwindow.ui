@@ -28,10 +28,63 @@
     <bool>true</bool>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="17" column="0">
+    <item row="10" column="0" colspan="2">
+     <widget class="QLabel" name="label_2">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Panel</enum>
+      </property>
+      <property name="text">
+       <string>Countries</string>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="1" colspan="2">
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0" colspan="2">
+     <widget class="QSpinBox" name="spinBox">
+      <property name="font">
+       <font>
+        <weight>50</weight>
+        <bold>false</bold>
+        <underline>false</underline>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 230, 253);</string>
+      </property>
+      <property name="minimum">
+       <number>0</number>
+      </property>
+      <property name="maximum">
+       <number>9999</number>
+      </property>
+      <property name="value">
+       <number>1</number>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="0">
      <widget class="QLineEdit" name="lineEdit"/>
     </item>
-    <item row="15" column="2">
+    <item row="2" column="0" colspan="2">
+     <widget class="QLabel" name="label">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="text">
+       <string>Data About Country #</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="2">
      <widget class="QPushButton" name="pushButton_2">
       <property name="palette">
        <palette>
@@ -75,75 +128,16 @@
       </property>
      </widget>
     </item>
-    <item row="15" column="1">
-     <widget class="QSpinBox" name="spinBox_2">
-      <property name="minimum">
-       <number>0</number>
-      </property>
-      <property name="maximum">
-       <number>999</number>
-      </property>
-      <property name="value">
-       <number>1</number>
-      </property>
-     </widget>
+    <item row="8" column="0" colspan="2">
+     <widget class="QListView" name="listView"/>
     </item>
     <item row="13" column="0" colspan="2">
      <widget class="QTableView" name="tableView"/>
     </item>
-    <item row="8" column="0" colspan="2">
-     <widget class="QListView" name="listView"/>
-    </item>
-    <item row="10" column="0" colspan="2">
-     <widget class="QLabel" name="label_2">
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Panel</enum>
-      </property>
+    <item row="13" column="2">
+     <widget class="QPushButton" name="pushButton_3">
       <property name="text">
-       <string>Countries</string>
-      </property>
-     </widget>
-    </item>
-    <item row="17" column="1" colspan="2">
-     <widget class="QPushButton" name="pushButton">
-      <property name="text">
-       <string>Add</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0" colspan="2">
-     <widget class="QLabel" name="label">
-      <property name="frameShape">
-       <enum>QFrame::Box</enum>
-      </property>
-      <property name="text">
-       <string>Data About Country #</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0" colspan="2">
-     <widget class="QSpinBox" name="spinBox">
-      <property name="font">
-       <font>
-        <weight>50</weight>
-        <bold>false</bold>
-        <underline>false</underline>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 230, 253);</string>
-      </property>
-      <property name="minimum">
-       <number>0</number>
-      </property>
-      <property name="maximum">
-       <number>9999</number>
-      </property>
-      <property name="value">
-       <number>1</number>
+       <string>calculate total</string>
       </property>
      </widget>
     </item>

@@ -87,6 +87,8 @@ void MyModel::appendRow(QList<QString> newRow)
 }
 
 
+
+
 void MyModel::deleteRow(int idx)
 {
     beginRemoveRows(QModelIndex(), idx, idx);

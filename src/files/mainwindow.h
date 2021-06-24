@@ -24,7 +24,9 @@ private slots:
     void on_actionload_triggered();
     void on_actionsave_as_triggered();
     void on_pushButton_clicked();
-    void on_spinBox_2_valueChanged(int arg1);
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     MyModel* myModel;

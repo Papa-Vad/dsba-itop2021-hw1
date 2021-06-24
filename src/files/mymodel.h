@@ -22,7 +22,6 @@ public:
     Qt::ItemFlags flags(const QModelIndex &index) const override;
     
     void deleteRow(int idx);
-    
 private:
     QList<QList<QString> > Data;
 signals:
